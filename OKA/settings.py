@@ -9,8 +9,7 @@ SECRET_KEY = 'django-insecure-#kyy1-_6le_ah^=-&*&yvyr06dtx8@7r(8_#tyx-ip1go#(%+i
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.58.192']
-
+ALLOWED_HOSTS = ['192.168.58.192', '192.168.31.217']
 INSTALLED_APPS = [
     'ckeditor',
     'jazzmin',
@@ -97,7 +96,7 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_FILENAME_GENERATOR = 'utils.get_filename'
 CKEDITOR_CONFIGS = {
     'default': {
-        'skin': 'minimalist',
+        # 'skin': 'minimalist',
         'toolbar_Basic': [
             ['Source', '-', 'Bold', 'Italic']
         ],
@@ -159,9 +158,6 @@ STATICFILES_DIRS = (
 )
 STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/').replace('\\', '/')
-
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
     "site_title": "OKA Admin",
@@ -173,16 +169,16 @@ JAZZMIN_SETTINGS = {
     "site_brand": "OKA",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
-    "site_logo": None,
+    "site_logo": "logo.gif",
 
     # CSS classes that are applied to the logo above
     "site_logo_classes": "img-circle",
 
     # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
-    "site_icon": None,
+    "site_icon": "logo.gif",
 
     # Welcome text on the login screen
-    "welcome_sign": "Welcome to the OKA",
+    "welcome_sign": "Welcome to the OKA admin",
 
     # Copyright on the footer
     "copyright": "MIIGAiK",
@@ -201,10 +197,16 @@ JAZZMIN_SETTINGS = {
         {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
 
         # model admin to link to (Permissions checked against model)
-        {"model": "auth.User"},
+        # {"model": "auth.User"},
 
         # App with dropdown menu to all its models pages (Permissions checked against models)
-        {"app": "main"},
+        {"model": "main.Image"},
+        {"model": "main.Event"},
+        {"model": "main.Update"},
+        {"model": "main.Team"},
+        {"model": "main.About"},
+        {"model": "main.Region"},
+        {"model": "main.Results"},
     ],
 
     #############
@@ -213,7 +215,7 @@ JAZZMIN_SETTINGS = {
 
     # Additional links to include in the user menu on the top right ("app" url type is not allowed)
     "usermenu_links": [
-        {"model": "auth.user"}
+        {"model": "auth.user"},
     ],
 
     #############
@@ -221,7 +223,7 @@ JAZZMIN_SETTINGS = {
     #############
 
     # Whether to display the side menu
-    "show_sidebar": True,
+    "show_sidebar": False,
 
     # Whether to aut expand the menu
     "navigation_expanded": True,
@@ -230,7 +232,7 @@ JAZZMIN_SETTINGS = {
     "hide_apps": [],
 
     # Hide these models when generating side menu (e.g auth.user)
-    "hide_models": ["groups"],
+    "hide_models": ["auth.groups"],
 
     # Custom icons for side menu apps/models See https://fontawesome.com/icons?d=gallery&m=free&v=5.0.0,5.0.1,5.0.10,5.0.11,5.0.12,5.0.13,5.0.2,5.0.3,5.0.4,5.0.5,5.0.6,5.0.7,5.0.8,5.0.9,5.1.0,5.1.1,5.2.0,5.3.0,5.3.1,5.4.0,5.4.1,5.4.2,5.13.0,5.12.0,5.11.2,5.11.1,5.10.0,5.9.0,5.8.2,5.8.1,5.7.2,5.7.1,5.7.0,5.6.3,5.5.0,5.4.2
     # for the full list of 5.13.0 free icon classes
@@ -273,3 +275,6 @@ JAZZMIN_SETTINGS = {
     # Add a language dropdown into the admin
     "language_chooser": False,
 }
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/').replace('\\', '/')
+
