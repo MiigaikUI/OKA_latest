@@ -7,9 +7,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-#kyy1-_6le_ah^=-&*&yvyr06dtx8@7r(8_#tyx-ip1go#(%+i'
 
-DEBUG = True
+DEBUG = True    
 
-ALLOWED_HOSTS = ['192.168.58.192', '192.168.31.217']
+ALLOWED_HOSTS = ['192.168.58.192', '192.168.31.217', '192.168.137.1']
 INSTALLED_APPS = [
     'ckeditor',
     'jazzmin',
@@ -199,14 +199,14 @@ JAZZMIN_SETTINGS = {
         # model admin to link to (Permissions checked against model)
         # {"model": "auth.User"},
 
-        # App with dropdown menu to all its models pages (Permissions checked against models)
-        {"model": "main.Image"},
-        {"model": "main.Event"},
-        {"model": "main.Update"},
-        {"model": "main.Team"},
-        {"model": "main.About"},
-        {"model": "main.Region"},
-        {"model": "main.Results"},
+        # # App with dropdown menu to all its models pages (Permissions checked against models)
+        # {"model": "main.Image"},
+        # {"model": "main.Event"},
+        # {"model": "main.Update"},
+        # {"model": "main.Team"},
+        # {"model": "main.About"},
+        # {"model": "main.Region"},
+        # {"model": "main.Results"},
     ],
 
     #############
@@ -223,7 +223,7 @@ JAZZMIN_SETTINGS = {
     #############
 
     # Whether to display the side menu
-    "show_sidebar": False,
+    "show_sidebar": True,
 
     # Whether to aut expand the menu
     "navigation_expanded": True,
