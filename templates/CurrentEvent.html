@@ -1,13 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-</head>
-<body>
-    {{ object.name }}
-    {{ object.img }}
-    {{ object.date }}
-    {{ object.description }}
-</body>
-</html>
+
+{% extends 'Content.html' %}
+ {% block child %}
+ <div class="team-block-member">
+    <div>
+      <img src="{{object.img.url}} " class="team-block-member__img" alt="" />
+    </div>
+    <div class="team-block-member-info">
+      <div class="team-block-member__heading">
+        {{ object.name }}
+      </div>
+      <div class="team-block-member__sub">{{ object.date }}</div>
+      <div class="team-block-member__text">
+        {{ object.description|safe }}
+        
+      </div>
+    </div>
+  </div>
+</div>
+ {%endblock %}
