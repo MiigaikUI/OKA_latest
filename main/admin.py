@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from .models import Team, About, Image, Region, Results, Update, Event
+from .models import Team, About, Image, Region, Results, Update, Event, Archive
 
 
 @admin.register(Image)
@@ -87,8 +87,8 @@ class EventAdmin(admin.ModelAdmin):
     readonly_fields = ('preview',)
 
 
-@admin.register(About)
-class AboutAdmin(admin.ModelAdmin):
+@admin.register(About, Region, Results, Archive)
+class StaticAdmin(admin.ModelAdmin):
     list_display = ('name', 'status')
     search_fields = ('name',)
     fieldsets = (
@@ -100,45 +100,21 @@ class AboutAdmin(admin.ModelAdmin):
             None,
             {
                 "classes": ("wide",),
-                "fields": ("name"),
+                "fields": ("name",),
             },
         ),
     )
 
-
-@admin.register(Region)
-class RegionAdmin(admin.ModelAdmin):
-    list_display = ('name', 'status')
-    search_fields = ('name',)
-    fieldsets = (
-        ("Основная информация", {"fields": ('name', 'status')}),
-        ("Содержание", {"fields": ('html',)}),
-    )
-    add_fieldsets = (
-        (
-            None,
-            {
-                "classes": ("wide",),
-                "fields": ("name"),
-            },
-        ),
-    )
-
-
-@admin.register(Results)
-class ResultsAdmin(admin.ModelAdmin):
-    list_display = ('name', 'status')
-    search_fields = ('name',)
-    fieldsets = (
-        ("Основная информация", {"fields": ('name', 'status')}),
-        ("Содержание", {"fields": ('html',)}),
-    )
-    add_fieldsets = (
-        (
-            None,
-            {
-                "classes": ("wide",),
-                "fields": ("name"),
-            },
-        ),
-    )
+# @admin.register(Archive)
+# class AboutAdmin(StaticAdmin):
+#     ...
+#
+#
+# @admin.register(Region)
+# class RegionAdmin(StaticAdmin):
+#     ...
+#
+#
+# @admin.register(Results)
+# class ResultsAdmin(StaticAdmin):
+#     ...

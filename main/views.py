@@ -1,15 +1,37 @@
+import sys
 from django.http import HttpResponseNotFound
 from django.shortcuts import render
-
-# Create your views here.
 from django.views import View
+from .models import *
 
-from main.models import About
 
-class AboutView(View):
+class StaticView(View):
     def get(self, request):
+        page = request.__dict__['resolver_match'].url_name.capitalize()
+        page_class = getattr(sys.modules[__name__], page)
         try:
-            return render(request, "about.html", {"html":About.objects.all().filter(status=True)[0].html})
+            return render(request, "Static.html", {"title": page, "object": page_class.objects.get(status=True)})
         except:
-            #TODO: refactor
-            return HttpResponseNotFound('<h1 style="text-align: center;">About page doesn`t exists or not activated</h1>')
+            # TODO: refactorvc
+            return HttpResponseNotFound(f'<h1 style="text-align: center;">{page} page doesn`t exists or not activated</h1>')
+
+
+class SetView(View):
+    def get(self, request):
+        page = request.__dict__['resolver_match'].url_name.capitalize()
+        page_class = getattr(sys.modules[__name__], page)
+        try:
+            return render(request, page + ".html", {"title": page, "objects": page_class.objects.all()})
+        except:
+            # TODO: refactor
+            return HttpResponseNotFound(f'<h1 style="text-align: center;">{page} objects doesn`t exists</h1>')
+
+
+class EventView(View):
+    def get(self, request, id):
+        try:
+            event = Event.objects.get(id=id)
+            return render(request, "CurrentEvent.html", {"title": event.name, "object": event})
+        except:
+            # TODO: refactor
+            return HttpResponseNotFound(f'<h1 style="text-align: center;">Event object with id = {id} doesn`t exists</h1>')

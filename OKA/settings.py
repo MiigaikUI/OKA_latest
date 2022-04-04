@@ -1,4 +1,5 @@
 import os
+import sys
 from pathlib import Path
 
 import ckeditor_uploader
@@ -7,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-#kyy1-_6le_ah^=-&*&yvyr06dtx8@7r(8_#tyx-ip1go#(%+i'
 
-DEBUG = True    
+DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.58.192', '192.168.31.217', '192.168.137.1']
 INSTALLED_APPS = [
@@ -86,8 +87,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'UTC'
-
+TIME_ZONE = 'Europe/Moscow'
 USE_I18N = True
 
 USE_TZ = True
@@ -124,7 +124,7 @@ CKEDITOR_CONFIGS = {
             ]},
         ],
         'toolbar': 'YourCustomToolbarConfig',  # put selected toolbar config here
-        'toolbarGroups': [{ 'name': 'document', 'groups': [ 'mode', 'document', 'doctools' ] }],
+        'toolbarGroups': [{'name': 'document', 'groups': ['mode', 'document', 'doctools']}],
         'height': '100%',
         'width': '100%',
         # 'filebrowserWindowHeight': 725,
@@ -277,4 +277,3 @@ JAZZMIN_SETTINGS = {
 }
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/').replace('\\', '/')
-

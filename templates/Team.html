@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+{% for object in objects %}
+    {{ object.first_name }}
+    {{ object.last_name }}
+    {{ object.img }}
+    {{ object.role }}
+    {{ object.description }}
+{% endfor %}
+</body>
+</html>
