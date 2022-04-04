@@ -5,6 +5,11 @@ from django.views import View
 from .models import *
 
 
+class MapView(View):
+    def get(self, request):
+        return render(request, "Map.html", {"title": "Map"})
+
+
 class StaticView(View):
     def get(self, request):
         page = request.__dict__['resolver_match'].url_name.capitalize()

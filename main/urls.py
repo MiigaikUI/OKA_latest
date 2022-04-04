@@ -18,10 +18,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 from OKA import settings
-from main.views import StaticView, SetView, EventView
+from main.views import StaticView, SetView, EventView, MapView
 
 urlpatterns = [
     path('about/', StaticView.as_view(), name='about'),
+    path('', MapView.as_view(), name='map'),
     path('region/', StaticView.as_view(), name='region'),
     path('results/', StaticView.as_view(), name='results'),
     path('archive/', StaticView.as_view(), name='archive'),
