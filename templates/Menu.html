@@ -3,17 +3,17 @@
     Экологические риски бассейна реки оки
 </div>
 <div class="top-menu">
-    <a href="{# url 'map' #}" style="background-color:rgba(0,122,171,0.9)" class="top-link">
+    <a href="{% url 'map' %}" style="background-color:rgba(0,122,171,0.9)" class="top-link">
         <div class="top-menu__item">
             <span>Общая карта</span>
         </div>
     </a>
-    <a href="{# url 'map' #}" style="background-color: rgba(0,173,229,0.9);" class="top-link">
+    <a href="{% url 'map' %}" style="background-color: rgba(0,173,229,0.9);" class="top-link">
         <div class="top-menu__item">
             <span>Тестовые участки</span>
         </div>
     </a>
-    <a href="{# url 'map' #}" style="background-color: rgba(0,190,163,0.9)" class="top-link">
+    <a href="{% url 'about' %}" style="background-color: rgba(0,190,163,0.9)" class="top-link">
         <div class="top-menu__item">
             <span>Контакты</span>
         </div>
@@ -25,46 +25,64 @@
 <div class="menu-block">
    
     <div class="side-menu">
-
+        <a href="{% url 'about' %}" >
+            <div class="side-menu-item">
+                <div class="div-animated">
+                    <img class="side-menu-item__img" src="{% static '/NavImg/about.png'%}">
+                    <div class="side-menu-item__text">О проекте</div>
+                </div>
+            </div>
+        </a>
+     
+        <a href="{% url 'team' %}" >
         <div class="side-menu-item">
             <div class="div-animated">
-                <img class="side-menu-item__img" src="{% static '/NavImg/about.png'%}">
-                <div class="side-menu-item__text">О проекте</div>
+                <img class="side-menu-item__img" src="{% static '/NavImg/team.png'%}">
+                <div class="side-menu-item__text">Команда</div>
             </div>
         </div>
+    </a>
+        <a href="{% url 'region' %}" >
+        <div class="side-menu-item">
+            <div class="div-animated">
+                <img class="side-menu-item__img" src="{% static '/NavImg/region.png'%}">
+                <div class="side-menu-item__text">О регионе</div>
+            </div>
+        </div>
+    </a>
+        <a href="{% url 'results' %}" >
+        <div class="side-menu-item">
+            <div class="div-animated">
+                <img class="side-menu-item__img" src="{% static '/NavImg/results.png'%}">
+                <div class="side-menu-item__text">Результаты</div>
+            </div>
+        </a>
+    </div>
+    <a href="{% url 'update' %}" >
         <div class="side-menu-item">
             <div class="div-animated">
                 <img class="side-menu-item__img" src="{% static '/NavImg/anons.png'%}">
                 <div class="side-menu-item__text">Обновления</div>
             </div>
         </div>
-
+    </a>
+        <a href="{% url 'event' %}" >
         <div class="side-menu-item">
             <div class="div-animated">
-                <img class="side-menu-item__img" src="{% static '/NavImg/publish.png'%}">
-                <div class="side-menu-item__text">Публикации</div>
+                <img class="side-menu-item__img" src="{% static '/NavImg/event.png'%}">
+                <div class="side-menu-item__text">Мероприятия</div>
             </div>
         </div>
-
-        <div class="side-menu-item">
-            <div class="div-animated">
-                <img class="side-menu-item__img" src="{% static '/NavImg/region.png'%}">
-                <div class="side-menu-item__text">Регион</div>
-            </div>
-
-        </div>
-        <div class="side-menu-item">
-            <div class="div-animated">
-                <img class="side-menu-item__img" src="{% static '/NavImg/gallery.png'%}">
-                <div class="side-menu-item__text">Галерея</div>
-            </div>
-        </div>
+    </a>
+        <a href="{% url 'archive' %}" >
         <div class="side-menu-item">
             <div class="div-animated">
                 <img class="side-menu-item__img" src="{% static '/NavImg/archive.png'%}">
                 <div class="side-menu-item__text">Архив</div>
             </div>
         </div>
+    </a>
     </div>
+
     <div class="btn-block"> <button onclick="menuOpen()" class="menu-open-button">МЕНЮ</button></div>
 </div>
