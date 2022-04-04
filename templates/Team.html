@@ -1,16 +1,22 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-</head>
-<body>
-{% for object in objects %}
-    {{ object.first_name }}
-    {{ object.last_name }}
-    {{ object.img }}
-    {{ object.role }}
-    {{ object.description }}
-{% endfor %}
-</body>
-</html>
+ {% extends 'Content.html' %}
+{% block child %}
+ <div class="team-block">
+{% for object in objects %} 
+  <div class="team-block-member">
+    <div>
+      <img src="{{object.img.url}} " class="team-block-member__img" alt="" />
+    </div>
+    <div class="team-block-member-info">
+      <div class="team-block-member__heading">
+      {{ object.first_name }} {{ object.last_name }}
+      </div>
+      <div class="team-block-member__sub">{{ object.role }}</div>
+      <div class="team-block-member__text">
+        {{ object.description }}
+        
+      </div>
+    </div>
+  </div>
+   {% endfor %}
+</div>
+{% endblock %}

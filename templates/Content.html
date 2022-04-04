@@ -1,0 +1,14 @@
+{% extends 'Base.html' %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+{% include "Menu.html" %}
+<div class="content-wrapper">
+    <div class="content">
+      <div class="content-heading">{{heading}}</div>
+        {% block child %}
+        {% endblock %}
+    </div>
+</div>
+{% include "Footer.html" %}
+{% endblock %}

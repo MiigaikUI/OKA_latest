@@ -1,0 +1,69 @@
+<div class="logo" draggable="false">
+    Экологические риски бассейна реки оки
+</div>
+<div class="top-menu">
+    <a href="{% url 'map' %}" style="background-color:rgba(0,122,171,0.9)" class="top-link">
+        <div class="top-menu__item">
+            <span>Общая карта</span>
+        </div>
+    </a>
+    <a href="{% url 'map' %}" style="background-color: rgba(0,173,229,0.9);" class="top-link">
+        <div class="top-menu__item">
+            <span>Тестовые участки</span>
+        </div>
+    </a>
+    <a href="{% url 'map' %}" style="background-color: rgba(0,190,163,0.9)" class="top-link">
+        <div class="top-menu__item">
+            <span>Контакты</span>
+        </div>
+    </a>
+</div>
+
+</button>
+
+<div class="menu-block">
+   
+    <div class="side-menu">
+
+        <div class="side-menu-item">
+            <div class="div-animated">
+                <img class="side-menu-item__img" src="{% static '/NavImg/about.png'%}">
+                <div class="side-menu-item__text">О проекте</div>
+            </div>
+        </div>
+        <div class="side-menu-item">
+            <div class="div-animated">
+                <img class="side-menu-item__img" src="{% static '/NavImg/anons.png'%}">
+                <div class="side-menu-item__text">Обновления</div>
+            </div>
+        </div>
+
+        <div class="side-menu-item">
+            <div class="div-animated">
+                <img class="side-menu-item__img" src="{% static '/NavImg/publish.png'%}">
+                <div class="side-menu-item__text">Публикации</div>
+            </div>
+        </div>
+
+        <div class="side-menu-item">
+            <div class="div-animated">
+                <img class="side-menu-item__img" src="{% static '/NavImg/region.png'%}">
+                <div class="side-menu-item__text">Регион</div>
+            </div>
+
+        </div>
+        <div class="side-menu-item">
+            <div class="div-animated">
+                <img class="side-menu-item__img" src="{% static '/NavImg/gallery.png'%}">
+                <div class="side-menu-item__text">Галерея</div>
+            </div>
+        </div>
+        <div class="side-menu-item">
+            <div class="div-animated">
+                <img class="side-menu-item__img" src="{% static '/NavImg/archive.png'%}">
+                <div class="side-menu-item__text">Архив</div>
+            </div>
+        </div>
+    </div>
+    <div class="btn-block"> <button onclick="menuOpen()" class="menu-open-button">МЕНЮ</button></div>
+</div>

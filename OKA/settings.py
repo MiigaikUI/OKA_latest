@@ -10,7 +10,7 @@ SECRET_KEY = 'django-insecure-#kyy1-_6le_ah^=-&*&yvyr06dtx8@7r(8_#tyx-ip1go#(%+i
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.58.192', '192.168.31.217', '192.168.137.1']
+ALLOWED_HOSTS = ['192.168.58.192', '192.168.31.217', '192.168.137.1','192.168.58.188']
 INSTALLED_APPS = [
     'ckeditor',
     'jazzmin',
