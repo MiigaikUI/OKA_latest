@@ -35,12 +35,12 @@
         box-shadow: 1px 0px 11px 2px rgba(34, 60, 80, 0.2);
     }
 
-    ul li {
+    /* ul li {
         list-style-type: none;
         color: white;
         text-transform: uppercase;
         font-size: 0.75rem;
-    }
+    } */
 
     iframe {
         width: 100vw;
@@ -190,13 +190,13 @@
         display: flex;
         justify-content: center;
         width: 140px;
-        min-height: 110px;
+        min-height: 100px;
 
     }
 
     .side-menu-item__img {
         display: flex;
-        width: 64px;
+        width: 54px;
         margin: auto;
         margin-top: 0.5rem;
     }
@@ -208,8 +208,7 @@
         font-size: 14px;
         color: rgba(255, 255, 255, 1);
         text-transform: uppercase;
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
+        margin-top: 0.25rem;
         text-align: center;
     }
 
@@ -220,53 +219,8 @@
         
     }
     /*НОРМ БОКОВОЕ МЕНЮ*/
-
-    @media (min-width:1200px) {
-
-        .top-menu__item {
-            display: flex;
-            min-width: 256px;
-            height: 42px;
-            align-items: center;
-            justify-content: center;
-            font-family: SF UI Display;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 16px;
-            color: rgba(255, 255, 255, 1);
-            text-transform: uppercase;
-        }
-
-        .side-menu-item {
-            display: flex;
-            justify-content: center;
-            width: 140px;
-            min-height: 110px;
-
-        }
-
-        .side-menu-item__img {
-            display: flex;
-            width: 64px;
-            margin: auto;
-            margin-top: 0.7rem;
-        }
-
-        .side-menu-item__text {
-            font-family: SF UI Display;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 14px;
-            color: rgba(255, 255, 255, 1);
-            text-transform: uppercase;
-            margin-top: 0.5rem;
-            margin-bottom: 0.5rem;
-            text-align: center;
-        }
-    }
-
  
-    @media (max-width: 1199px) {
+    @media (max-width: 1200px) {
 
         .top-menu__item {
             display: flex;
@@ -282,33 +236,8 @@
             text-transform: uppercase;
         }
 
-        .side-menu-item {
-            display: flex;
-            justify-content: center;
-            width: 120px;
-            min-height: 20px;
-            border-radius: 10px;
-        }
-
-        .side-menu-item__img {
-            display: flex;
-            width: 40px;
-            margin: auto;
-            margin-top: 0.5rem;
-        }
-
-        .side-menu-item__text {
-            font-family: SF UI Display;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 10px;
-            color: rgba(255, 255, 255, 1);
-            text-transform: uppercase;
-            margin-top: 0.5rem;
-            margin-bottom: 0.5rem;
-            text-align: center;
-        }
     }
+
 
 
     @media (max-width: 767px) {
@@ -322,7 +251,7 @@
             font-family: SF UI Display;
             font-style: normal;
             font-weight: normal;
-            font-size: 12px;
+            font-size: 10px;
             color: rgba(255, 255, 255, 1);
             text-transform: uppercase;
         }
@@ -331,32 +260,6 @@
             display: none;
         }
 
-        .side-menu-item {
-            display: flex;
-            justify-content: center;
-            width: 80px;
-            min-height: 20px;
-            border-radius: 10px;
-        }
-
-        .side-menu-item__img {
-            display: flex;
-            width: 26px;
-            margin: auto;
-            margin-top: 0.25rem;
-        }
-
-        .side-menu-item__text {
-            font-family: SF UI Display;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 8px;
-            color: rgba(255, 255, 255, 1);
-            text-transform: uppercase;
-            margin-top: 0.25rem;
-            margin-bottom: 0.25rem;
-            text-align: center;
-        }
     }
 
     @media (max-width: 480px) {
@@ -375,32 +278,7 @@
             text-transform: uppercase;
         }
 
-        .side-menu-item {
-            display: flex;
-            justify-content: center;
-            width: 80px;
-            min-height: 20px;
-            border-radius: 10px;
-        }
-
-        .side-menu-item__img {
-            display: none;
-            width: 26px;
-            margin: auto;
-            margin-top: 0.5rem;
-        }
-
-        .side-menu-item__text {
-            font-family: SF UI Display;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 10px;
-            color: rgba(255, 255, 255, 1);
-            text-transform: uppercase;
-            margin-top: 0.5rem;
-            margin-bottom: 0.5rem;
-            text-align: center;
-        }
+       
     }
 
 
@@ -412,7 +290,6 @@
         .top-menu__item {
             display: flex;
             min-width: 200px;
-            height: 30;
             align-items: center;
             justify-content: center;
             font-family: SF UI Display;
@@ -423,32 +300,19 @@
             text-transform: uppercase;
         }
 
-        .side-menu-item {
-            display: flex;
-            justify-content: center;
-            width: 80px;
-            min-height: 20px;
-            border-radius: 10px;
-        }
+    
+    }
 
-        .side-menu-item__img {
-            display: none;
-            width: 26px;
-            margin: auto;
-            margin-top: 0.5rem;
-        }
+    .side-menu-item:hover{
+       background-color: rgba(255, 255, 255, 0.3);
+    }
 
-        .side-menu-item__text {
-            font-family: SF UI Display;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 10px;
-            color: rgba(255, 255, 255, 1);
-            text-transform: uppercase;
-            margin-top: 0.5rem;
-            margin-bottom: 0.5rem;
-            text-align: center;
-        }
+    .top-link:hover{
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .top-menu__item:hover{
+        background-color: rgba(255, 255, 255, 0.3);
     }
 
     .top-menu {
@@ -490,22 +354,6 @@
         text-decoration: none !important;
     }
 
-    details summary {
-        display: block;
-        /* у summary по умолчанию свойство display в значении list-item, потому поддерживается свойство list-style */
-        width: 10em;
-
-        /* подводка точками или тире часто используется для элементов, с которыми пользователю предлагается взаимодействовать, можно заменить на text-decoration */
-        outline-style: none;
-        /* удалить обводку при фокусе */
-        cursor: pointer;
-    }
-
-    details summary::-webkit-details-marker {
-        /* нестандартный псевдоэлемент Google Chrome */
-        display: none;
-    }
-
     /*анимация details*/
 
     @keyframes fadeInDown {
@@ -544,6 +392,7 @@
     }
 
     .content {
+        display: block;
         padding: 32px;;
         background-color: white;
         color: white;
@@ -556,7 +405,11 @@
         -moz-box-shadow: 1px 0px 11px 2px rgba(34, 60, 80, 0.2);
         box-shadow: 1px 0px 11px 2px rgba(34, 60, 80, 0.2);
         border-radius: 10px;
+        word-wrap: break-word;
+
     }
+
+
 
     .header {
         margin-left: 11rem;
@@ -605,7 +458,8 @@
 
     .footer__img{
         display: flex;
-        width: 150px;
+        width: 200px;
+        height: 200px;
         margin:0 1rem  0 1rem;
     }
 
