@@ -20,15 +20,19 @@ from django.urls import path, include
 from OKA import settings
 from main.views import StaticView, SetView, EventView, MapView
 
+
 urlpatterns = [
-    path('about/', StaticView.as_view(), name='about'),
     path('', MapView.as_view(), name='map'),
+
+    path('event/<id>', EventView.as_view(), name='current_event'),
+
+    path('about/', StaticView.as_view(), name='about'),
     path('region/', StaticView.as_view(), name='region'),
     path('results/', StaticView.as_view(), name='results'),
     path('archive/', StaticView.as_view(), name='archive'),
+    path('contact/', StaticView.as_view(), name='contact'),
+
     path('team/', SetView.as_view(), name='team'),
     path('event/', SetView.as_view(), name='event'),
     path('update/', SetView.as_view(), name='update'),
-    path('event/<id>', EventView.as_view(), name='current_event'),
-
 ]

@@ -1,7 +1,9 @@
 import sys
+
 from django.http import HttpResponseNotFound
 from django.shortcuts import render
 from django.views import View
+
 from .models import *
 
 
@@ -15,7 +17,9 @@ class StaticView(View):
         page = request.__dict__['resolver_match'].url_name.capitalize()
         page_class = getattr(sys.modules[__name__], page)
         try:
-            return render(request, "Static.html", {"title": page, "object": page_class.objects.get(status=True)})
+            return render(request, "Static.html",
+                          {"title": page, "heading": page_class._meta.original_attrs['verbose_name_plural'],
+                           "object": page_class.objects.get(status=True)})
         except:
             # TODO: refactorvc
             return HttpResponseNotFound(f'<h1 style="text-align: center;">{page} page doesn`t exists or not activated</h1>')
@@ -26,7 +30,8 @@ class SetView(View):
         page = request.__dict__['resolver_match'].url_name.capitalize()
         page_class = getattr(sys.modules[__name__], page)
         try:
-            return render(request, page + ".html", {"title": page, "objects": page_class.objects.all()})
+            return render(request, page + ".html",
+                          {"title": page, "heading": page_class._meta.verbose_name_plural, "objects": page_class.objects.all()})
         except:
             # TODO: refactor
             return HttpResponseNotFound(f'<h1 style="text-align: center;">{page} objects doesn`t exists</h1>')

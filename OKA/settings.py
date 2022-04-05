@@ -2,8 +2,6 @@ import os
 import sys
 from pathlib import Path
 
-import ckeditor_uploader
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-#kyy1-_6le_ah^=-&*&yvyr06dtx8@7r(8_#tyx-ip1go#(%+i'
@@ -195,6 +193,7 @@ JAZZMIN_SETTINGS = {
 
         # Url that gets reversed (Permissions can be added)
         {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "Site", "url": "map", "permissions": ["auth.view_user"]},
 
         # model admin to link to (Permissions checked against model)
         # {"model": "auth.User"},

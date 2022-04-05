@@ -10,9 +10,9 @@
       <div class="team-block-member__heading">
       {{ object.first_name }} {{ object.last_name }}
       </div>
-      <div class="team-block-member__sub">{{ object.role }}</div>
+      <div class="team-block-member__sub">{{ object.role|linebreaksbr }}</div>
       <div class="team-block-member__text">
-        {{ object.description }}
+        {{ object.description|linebreaksbr }}
         
       </div>
     </div>

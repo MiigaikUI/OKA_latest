@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from .models import Team, About, Image, Region, Results, Update, Event, Archive
+from .models import Team, About, Image, Region, Results, Update, Event, Archive, Contact
 
 
 @admin.register(Image)
@@ -11,7 +11,7 @@ class ImageAdmin(admin.ModelAdmin):
     readonly_fields = ('preview', 'link')
 
     def preview(self, obj):
-        return mark_safe(f'<img src="{obj.img.url}" style="max-height: 200px;">')
+        return mark_safe(f'<img src="{obj.img.url}" style="height: 180px; width: 180px;">')
 
     preview.short_description = 'Предпросмотр'
     preview.allow_tags = True
@@ -24,17 +24,17 @@ class ImageAdmin(admin.ModelAdmin):
 
 
 @admin.register(Team)
-class ContactAdmin(admin.ModelAdmin):
+class TeamAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'preview')
     search_fields = ('first_name', 'last_name')
     readonly_fields = ('preview',)
     fieldsets = (
         ("Основная информация", {"fields": ('first_name', 'last_name', 'img', 'preview')}),
-        ("Роль в проекте", {"fields": ('role', 'description')}),
+        ("Дополнительная информация", {"fields": ('role', 'description')}),
     )
 
     def preview(self, obj):
-        return mark_safe(f'<img src="{obj.img.url}" style="max-height: 200px; border-radius:100%">')
+        return mark_safe(f'<img src="{obj.img.url}" style="height: 180px; width: 180px;">')
 
     preview.short_description = 'Предпросмотр'
     preview.allow_tags = True
@@ -48,7 +48,6 @@ class UpdateAdmin(admin.ModelAdmin):
         ("Основная информация", {"fields": ('name', 'date')}),
         ("Содержание", {"fields": ('description',)}),
     )
-    # readonly_fields = ('date',)
     add_fieldsets = (
         (
             None,
@@ -68,7 +67,6 @@ class EventAdmin(admin.ModelAdmin):
         ("Основная информация", {"fields": ('name', 'date', 'img', 'preview')}),
         ("Содержание", {"fields": ('description',)}),
     )
-    # readonly_fields = ('date',)
     add_fieldsets = (
         (
             None,
@@ -80,14 +78,14 @@ class EventAdmin(admin.ModelAdmin):
     )
 
     def preview(self, obj):
-        return mark_safe(f'<img src="{obj.img.url}" style="max-height: 200px;">')
+        return mark_safe(f'<img src="{obj.img.url}" style="height: 180px; width: 180px;">')
 
     preview.short_description = 'Предпросмотр'
     preview.allow_tags = True
     readonly_fields = ('preview',)
 
 
-@admin.register(About, Region, Results, Archive)
+@admin.register(About, Region, Results, Archive, Contact)
 class StaticAdmin(admin.ModelAdmin):
     list_display = ('name', 'status')
     search_fields = ('name',)
@@ -104,17 +102,3 @@ class StaticAdmin(admin.ModelAdmin):
             },
         ),
     )
-
-# @admin.register(Archive)
-# class AboutAdmin(StaticAdmin):
-#     ...
-#
-#
-# @admin.register(Region)
-# class RegionAdmin(StaticAdmin):
-#     ...
-#
-#
-# @admin.register(Results)
-# class ResultsAdmin(StaticAdmin):
-#     ...

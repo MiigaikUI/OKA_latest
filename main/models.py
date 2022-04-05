@@ -1,6 +1,9 @@
+import os
+
 from ckeditor.fields import RichTextField
 from django.db import models
 
+from OKA import settings
 from main.fields import UniqueBooleanField
 
 
@@ -34,6 +37,13 @@ class About(Static):
         abstract = False
         verbose_name_plural = "О проекте"
         verbose_name = "О проекте"
+
+
+class Contact(Static):
+    class Meta():
+        abstract = False
+        verbose_name_plural = "Контакты"
+        verbose_name = "Контакт"
 
 
 class Region(Static):
@@ -76,7 +86,7 @@ class Team(models.Model):
         upload_to="contact/",
         help_text="Фото участника",
         blank=True,
-        default='contact/default.jpg'
+        default='contact/default.png'
     )
     role = models.TextField(
         "Роль",
@@ -92,8 +102,14 @@ class Team(models.Model):
     )
 
 
+    def delete(self, *args, **kwargs):
+        if self.img.name != "contact/default.png":
+            os.remove(os.path.join(settings.MEDIA_ROOT, self.img.name))
+        super().delete(*args, **kwargs)
+
     class Meta():
-        verbose_name_plural = "Команда"
+        ordering = ['id']
+        verbose_name_plural = "Команда проекта"
         verbose_name = "Участника"
 
 
@@ -134,7 +150,6 @@ class Event(models.Model):
         upload_to="event/",
         help_text="Фото, которое будет отображаться в общем списке мероприятий",
         blank=True,
-        default='event/default.jpg'
     )
 
     description = RichTextField(
@@ -147,6 +162,10 @@ class Event(models.Model):
         help_text="Дата проведения мероприятия",
         editable=True,
     )
+
+    def delete(self, *args, **kwargs):
+        os.remove(os.path.join(settings.MEDIA_ROOT, self.img.name))
+        super().delete(*args, **kwargs)
 
     class Meta():
         verbose_name_plural = "Мероприятия"
@@ -167,6 +186,10 @@ class Image(models.Model):
         help_text="Фото",
         blank=False,
     )
+
+    def delete(self, *args, **kwargs):
+        os.remove(os.path.join(settings.MEDIA_ROOT, self.img.name))
+        super().delete(*args, **kwargs)
 
     class Meta():
         verbose_name_plural = "Фото"
