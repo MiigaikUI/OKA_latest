@@ -118,7 +118,7 @@ class Update(models.Model):
         "Заголовок обновления",
         max_length=512,
         help_text="Короткое описание проделанной работы",
-        blank=False,
+        blank=True,
     )
     description = models.TextField(
         "Описание",
