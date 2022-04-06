@@ -13,76 +13,130 @@
             <span>Тестовые участки</span>
         </div>
     </a>
-    <a href="{% url 'contact' %}" style="background-color: rgba(0,190,163,0.9)" class="top-link">
+    <!-- <a href="{% url 'map' %}" style="background-color: rgba(145, 145, 145, 0.9);" class="top-link">
+        <div class="top-menu__item custom">
+            <span>Контакты</span>
+        </div>
+    </a> -->
+    <!-- <a href="{% url 'contact' %}" style="background-color: rgba(0,190,163,0.9)" class="top-link">
         <div class="top-menu__item">
             <span>Контакты</span>
         </div>
-    </a>
+    </a> -->
 </div>
 
 </button>
 
 <div class="menu-block">
-   
-    <div class="side-menu">
-        <a href="{% url 'about' %}" >
+
+    <!-- <div class="side-menu">
+            <a href="{% url 'about' %}" >
+                <div class="side-menu-item">
+                    <div class="div-animated">
+                        <img class="side-menu-item__img" src="{% static '/NavImg/about.png'%}">
+                        <div class="side-menu-item__text">О проекте</div>
+                    </div>
+                </div>
+            </a>
+        
+            <a href="{% url 'team' %}" >
             <div class="side-menu-item">
                 <div class="div-animated">
-                    <img class="side-menu-item__img" src="{% static '/NavImg/about.png'%}">
-                    <div class="side-menu-item__text">О проекте</div>
+                    <img class="side-menu-item__img" src="{% static '/NavImg/team.png'%}">
+                    <div class="side-menu-item__text">Команда</div>
                 </div>
             </div>
         </a>
-     
-        <a href="{% url 'team' %}" >
-        <div class="side-menu-item">
-            <div class="div-animated">
-                <img class="side-menu-item__img" src="{% static '/NavImg/team.png'%}">
-                <div class="side-menu-item__text">Команда</div>
-            </div>
-        </div>
-    </a>
-        <a href="{% url 'region' %}" >
-        <div class="side-menu-item">
-            <div class="div-animated">
-                <img class="side-menu-item__img" src="{% static '/NavImg/region.png'%}">
-                <div class="side-menu-item__text">О регионе</div>
-            </div>
-        </div>
-    </a>
-        <a href="{% url 'results' %}" >
-        <div class="side-menu-item">
-            <div class="div-animated">
-                <img class="side-menu-item__img" src="{% static '/NavImg/results.png'%}">
-                <div class="side-menu-item__text">Результаты</div>
+            <a href="{% url 'region' %}" >
+            <div class="side-menu-item">
+                <div class="div-animated">
+                    <img class="side-menu-item__img" src="{% static '/NavImg/region.png'%}">
+                    <div class="side-menu-item__text">О регионе</div>
+                </div>
             </div>
         </a>
-    </div>
-    <a href="{% url 'update' %}" >
-        <div class="side-menu-item">
-            <div class="div-animated">
-                <img class="side-menu-item__img" src="{% static '/NavImg/anons.png'%}">
-                <div class="side-menu-item__text">Обновления</div>
-            </div>
+            <a href="{% url 'results' %}" >
+            <div class="side-menu-item">
+                <div class="div-animated">
+                    <img class="side-menu-item__img" src="{% static '/NavImg/results.png'%}">
+                    <div class="side-menu-item__text">Результаты</div>
+                </div>
+            </a>
         </div>
-    </a>
-        <a href="{% url 'event' %}" >
-        <div class="side-menu-item">
-            <div class="div-animated">
-                <img class="side-menu-item__img" src="{% static '/NavImg/event.png'%}">
-                <div class="side-menu-item__text">Мероприятия</div>
+        <a href="{% url 'update' %}" >
+            <div class="side-menu-item">
+                <div class="div-animated">
+                    <img class="side-menu-item__img" src="{% static '/NavImg/anons.png'%}">
+                    <div class="side-menu-item__text">Обновления</div>
+                </div>
             </div>
-        </div>
-    </a>
-        <a href="{% url 'archive' %}" >
-        <div class="side-menu-item">
-            <div class="div-animated">
-                <img class="side-menu-item__img" src="{% static '/NavImg/archive.png'%}">
-                <div class="side-menu-item__text">Архив</div>
+        </a>
+            <a href="{% url 'event' %}" >
+            <div class="side-menu-item">
+                <div class="div-animated">
+                    <img class="side-menu-item__img" src="{% static '/NavImg/event.png'%}">
+                    <div class="side-menu-item__text">Мероприятия</div>
+                </div>
             </div>
-        </div>
-    </a>
-    </div>
+        </a>
+            <a href="{% url 'archive' %}" >
+            <div class="side-menu-item">
+                <div class="div-animated">
+                    <img class="side-menu-item__img" src="{% static '/NavImg/archive.png'%}">
+                    <div class="side-menu-item__text">Архив</div>
+                </div>
+            </div>
+        </a>
+        </div> -->
 
-    <div class="btn-block"> <button onclick="menuOpen()" class="menu-open-button">МЕНЮ</button></div>
-</div>
+
+    <!-- <div class="btn-block"> <button onclick="menuOpen()" class="menu-open-button">МЕНЮ</button></div> -->
+    <div class="sidenav">
+        <div id="mySidenav" class="elementsSidenav">
+            <a href="{% url 'about' %}">
+                <div class="sidenavEl">
+                    <img src="{% static 'NavImg/about.png'%}" alt="" srcset="">
+                    <div class="sidenavElText">О проекте</div>
+                </div>
+            </a>
+            <a href="{% url 'team' %}">
+                <div class="sidenavEl">
+                    <img src="{% static 'NavImg/team.png'%}" alt="" srcset="">
+                    <div class="sidenavElText">Команда</div>
+                </div>
+            </a>
+            <a href="{% url 'region' %}">
+                <div class="sidenavEl">
+                    <img src="{% static 'NavImg/region.png'%}" alt="" srcset="">
+                    <div class="sidenavElText">О регионе</div>
+                </div>
+            </a>
+            <a href="{% url 'results' %}">
+                <div class="sidenavEl">
+                    <img src="{% static 'NavImg/results.png'%}" alt="" srcset="">
+                    <div class="sidenavElText">Результаты</div>
+                </div>
+            </a>
+            <a href="{% url 'update' %}">
+                <div class="sidenavEl">
+                    <img src="{% static 'NavImg/anons.png'%}" alt="" srcset="">
+                    <div class="sidenavElText">Обновления</div>
+                </div>
+            </a> <a href="{% url 'event' %}">
+                <div class="sidenavEl">
+                    <img src="{% static 'NavImg/event.png'%}" alt="" srcset="">
+                    <div class="sidenavElText">Мероприятия</div>
+                </div>
+            </a> <a href="{% url 'archive' %}">
+                <div class="sidenavEl">
+                    <img src="{% static 'NavImg/archive.png'%}" alt="" srcset="">
+                    <div class="sidenavElText">Архив</div>
+                </div>
+            </a>
+        </div>
+        <div class="btnSidenav">
+            <a class="btn" onclick="menuOpen()">
+                MENU
+            </a>
+        </div>
+    </div>

@@ -15,16 +15,20 @@
 
     .logo {
         border-radius: 10px;
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         position: absolute;
-        font-size: 24px;
+        text-align: center;
+        font-size: 17px;
         text-align: center;
         text-transform: uppercase;
-        margin-top: 55px;
-        margin-left: 10px;
-        width: 340px;
+        margin-top: 45px;
+        margin-left: 215px;
+        width: 390px;
         background-color: rgba(255, 255, 255, 0.9);
         font-weight: 500;
+        height: 50px;
         -moz-user-select: -moz-none;
         -o-user-select: none;
         -khtml-user-select: none;
@@ -77,7 +81,6 @@
         display: flex;
         margin-top: 1rem;
         margin-bottom: 1rem;
-        min-height: 250px;
         margin-left: 1rem;
     }
 
@@ -123,6 +126,84 @@
         }
     }
 
+    .sidenav {
+        height: 100vh;
+        position: absolute;
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+    }
+    .sidenav .btnSidenav{
+        display: flex;
+        width: 30px;
+        height: 100%;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .btn{
+        margin-left: 5px;
+    }
+    .sidenav .btnSidenav .btn{
+        padding: 8px 16px 4px 16px;
+        background-color: rgb(0 122 171 / 70%);;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 18px;
+        transform: rotate(90deg);
+        color: white;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .sidenav .elementsSidenav {
+        background-color: rgb(0 122 171 / 70%);;
+        height: 100%;
+        z-index: 1;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+        text-decoration: none;
+        transition: 0.5s;
+    }
+    .sidenav .elementsSidenav a{
+        text-align: center;
+        width: 100%;
+        height: auto;
+        padding-top:6px;
+        padding-bottom:6px;
+        text-decoration: none;
+        font-size: 22px;
+        color: white;
+        display: block;
+        transition: 0.3s;
+        rotate: 45deg;
+    }
+    
+    .sidenavEl{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidenavElText{
+        white-space: nowrap;
+        align-self: center;
+        display: flex;
+        
+    }
+    .sidenav img{
+        align-self: center;
+        width: 64px;
+        display: flex;
+    }
+/* 
     .opened{
         transform: translateX(45%) translateY(35%);
        
@@ -181,12 +262,12 @@
         margin-top: 0;
     } */
 
-    .block-opened {
+    /* .block-opened {
         animation: leftSideMove 0.5s;
     }
 
     /*НОРМ БОКОВОЕ меню*/
-    .side-menu-item {
+    /* .side-menu-item {
         display: flex;
         justify-content: center;
         width: 140px;
@@ -210,102 +291,19 @@
         text-transform: uppercase;
         margin-top: 0.25rem;
         text-align: center;
-    }
+    /* 
 
    @media (min-width:1550px) { 
         .logo{
             margin-top: 10px;
         }
         
-    }
+    } */
     /*НОРМ БОКОВОЕ МЕНЮ*/
  
-    @media (max-width: 1200px) {
-
-        .top-menu__item {
-            display: flex;
-            min-width: 200px;
-            height: 30;
-            align-items: center;
-            justify-content: center;
-            font-family: SF UI Display;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 12px;
-            color: rgba(255, 255, 255, 1);
-            text-transform: uppercase;
-        }
-
-    }
-
-
-
-    @media (max-width: 767px) {
-
-        .top-menu__item {
-            display: flex;
-            min-width: 200px;
-            height: 30;
-            align-items: center;
-            justify-content: center;
-            font-family: SF UI Display;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 10px;
-            color: rgba(255, 255, 255, 1);
-            text-transform: uppercase;
-        }
-
-        .logo{
-            display: none;
-        }
-
-    }
-
-    @media (max-width: 480px) {
-
-        .top-menu__item {
-            display: flex;
-            min-width: 200px;
-            height: 30;
-            align-items: center;
-            justify-content: center;
-            font-family: SF UI Display;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 12px;
-            color: rgba(255, 255, 255, 1);
-            text-transform: uppercase;
-        }
-
-       
-    }
-
-
-    
-
-
-    @media (max-width: 320px) {
-
-        .top-menu__item {
-            display: flex;
-            min-width: 200px;
-            align-items: center;
-            justify-content: center;
-            font-family: SF UI Display;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 12px;
-            color: rgba(255, 255, 255, 1);
-            text-transform: uppercase;
-        }
-
-    
-    }
-
     .side-menu-item:hover{
        background-color: rgba(255, 255, 255, 0.3);
-    }
+    } */
 
     .top-link:hover{
         background-color: rgba(255, 255, 255, 0.3);
@@ -315,13 +313,17 @@
         background-color: rgba(255, 255, 255, 0.3);
     }
 
+    .sidenavEl:hover{
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
     .top-menu {
         width: 100%;
         display: flex;
         flex-direction: row;
         position: absolute;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start;
+        margin-left: 215px;
         gap: 0.5rem;
         flex-wrap: wrap;
     }
@@ -338,14 +340,14 @@
 
     .top-menu__item {
         display: flex;
-        min-width: 256px;
-        height: 42px;
+        min-width: 192px;
+        height: 38px;
         align-items: center;
         justify-content: center;
         font-family: SF UI Display;
         font-style: normal;
         font-weight: normal;
-        font-size: 16px;
+        font-size: 14px;
         color: rgba(255, 255, 255, 1);
         text-transform: uppercase;
     }
@@ -376,14 +378,13 @@
     /*анимация details*/
 
     .content-wrapper {
-        margin-left: 176px;
+        margin-left: 215px;
         margin-top: 134px;
         margin-right: 58px;
         margin-bottom: 58px;
     }
 
-    .content-heading {
-        text-align: center;
+    .content-heading{
         color: black;
         font-size: 2.5rem;
         line-height: 2.5rem;
@@ -465,7 +466,11 @@
 
     .footer__text{
         display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         width: 200px;
+        
         /*text-align: center;*/
        
     }
