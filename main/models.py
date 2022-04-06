@@ -151,11 +151,16 @@ class Event(models.Model):
         help_text="Фото, которое будет отображаться в общем списке мероприятий",
         blank=True,
     )
-
-    description = RichTextField(
+    description = models.TextField(
         "Описание",
-        help_text="Подробное описание мероприятия",
+        max_length=2048,
+        help_text="Короткое описание обновления",
         blank=False,
+    )
+    html = RichTextField(
+        "Страница мероприятия",
+        help_text="Страница мероприятия",
+        blank=True,
     )
     date = models.DateField(
         "Дата проведения",
