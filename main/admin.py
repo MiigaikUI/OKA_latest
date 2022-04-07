@@ -72,7 +72,7 @@ class EventAdmin(admin.ModelAdmin):
     search_fields = ('name', 'date')
     fieldsets = (
         ("Основная информация", {"fields": ('name', 'date', 'img', 'preview')}),
-        ("Содержание", {"fields": ('description',)}),
+        ("Содержание", {"fields": ('description','html')}),
     )
     add_fieldsets = (
         (

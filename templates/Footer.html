@@ -4,7 +4,9 @@
 
         <div class="footer-container">
            <div class="footer__row-left">
-                <img src="{% static 'NavImg/MIIGAiK.svg'%}" alt="" srcset="" class="footer__img">
+               <a href="https://www.miigaik.ru/">
+                <img src="{% static '1.png'%}" alt="" srcset="" class="footer__img">
+               </a>
                 <div class="footer__text">
                     Разработано Московским государственным университетом
                     геодезии и картографии (МИИГАиК)
@@ -12,14 +14,34 @@
             </div>
           
             <div class="footer__row-right">
-                <img src="{% static 'RGS.png'%}" alt="" srcset="" class="footer__img">
+                <a href="https://www.rgo.ru/ru">
+                    <img src="{% static 'RGS.png'%}" alt="" srcset="" class="footer__img">
+                </a>
                 <div class="footer__text">
-                    При поддержке Русского Географического Общества
+                    При поддержке Русского Географического Общества (РГО)
                 </div>
             </div>
-          
+            
         </div>
-        <div class="footer__copyright">
-           <strong>Copyright © 2022 MIIGAiK.</strong> Все права защищены.
-        </div>
+        <div class="footer-container">
+            
+             <div class="footer__row-left" style="justify-content:start">
+                <div class="footer__copyright">
+                    <strong>Copyright © 2022 MIIGAiK.</strong> Все права защищены.
+                 </div>
+              </div>
+            
+              <div class="footer__row-right" style="flex-direction: column;width: calc(50% - 218px);padding-left: 35px;">
+                 <div class="footer__contact-heading">
+                     <h3>Контакты</h>
+                 </div>
+                 <div class="footer__contact-elem">
+                     Адрес: Москва, Гороховский пер., 4, кампус МИИГАиК, 6 корпус, 5 подъезд, 1 этаж
+                 </div>
+                 <div class="footer__contact-elem">
+                     Email: srdc@miigaik.ru                
+                 </div>
+              </div>
+         </div>
+       
     </div>

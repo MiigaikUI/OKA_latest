@@ -5,13 +5,17 @@
   <a href="{{ object.id }}">
     <div class="team-block-member">
         <div>
-          <img src="{{ object.img }}" class="team-block-member__img" alt="" />
+          <img src="{{ object.img.url }}" class="team-block-member__img" alt="" />
         </div>
         <div class="team-block-member-info">
           <div class="team-block-member__heading">
             {{ object.name }}
           </div>
           <div class="team-block-member__sub">{{ object.date }}</div>
+          <div class="team-block-member__text">
+            {{ object.description }}
+            
+          </div>
         </div>
       </div>
   </a>

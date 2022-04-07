@@ -3,12 +3,12 @@
     Экологические риски бассейна реки оки
 </div>
 <div class="top-menu">
-    <a href="{% url 'map' %}" style="background-color:rgba(0,122,171,0.9)" class="top-link">
+    <a href="{% url 'map' %}" style="background-color:rgba(0,122,171,0.5)" class="top-link">
         <div class="top-menu__item">
             <span>Общая карта</span>
         </div>
     </a>
-    <a href="{% url 'map' %}" style="background-color: rgba(0,173,229,0.9);" class="top-link">
+    <a href="{% url 'map' %}" style="background-color: rgba(0,173,229,0.5);" class="top-link">
         <div class="top-menu__item">
             <span>Тестовые участки</span>
         </div>
@@ -93,50 +93,72 @@
     <!-- <div class="btn-block"> <button onclick="menuOpen()" class="menu-open-button">МЕНЮ</button></div> -->
     <div class="sidenav">
         <div id="mySidenav" class="elementsSidenav">
+            {% if pages.about %}
             <a href="{% url 'about' %}">
                 <div class="sidenavEl">
                     <img src="{% static 'NavImg/about.png'%}" alt="" srcset="">
                     <div class="sidenavElText">О проекте</div>
                 </div>
             </a>
+            {% endif %}
+            {% if pages.team %}
             <a href="{% url 'team' %}">
                 <div class="sidenavEl">
                     <img src="{% static 'NavImg/team.png'%}" alt="" srcset="">
                     <div class="sidenavElText">Команда</div>
                 </div>
             </a>
+            {% endif %}
+            
+            {% if pages.region %}
             <a href="{% url 'region' %}">
                 <div class="sidenavEl">
                     <img src="{% static 'NavImg/region.png'%}" alt="" srcset="">
                     <div class="sidenavElText">О регионе</div>
                 </div>
             </a>
+            {% endif %}
+            
+            {% if pages.results %}
             <a href="{% url 'results' %}">
                 <div class="sidenavEl">
                     <img src="{% static 'NavImg/results.png'%}" alt="" srcset="">
                     <div class="sidenavElText">Результаты</div>
                 </div>
             </a>
+            {% endif %}
+            
+            {% if pages.update %}
             <a href="{% url 'update' %}">
                 <div class="sidenavEl">
                     <img src="{% static 'NavImg/anons.png'%}" alt="" srcset="">
                     <div class="sidenavElText">Обновления</div>
                 </div>
-            </a> <a href="{% url 'event' %}">
+            </a>
+            {% endif %}
+
+            {% if pages.event %}
+             <a href="{% url 'event' %}">
                 <div class="sidenavEl">
                     <img src="{% static 'NavImg/event.png'%}" alt="" srcset="">
                     <div class="sidenavElText">Мероприятия</div>
                 </div>
-            </a> <a href="{% url 'archive' %}">
+            </a>
+            {% endif %}
+
+            {% if pages.archive %}
+             <a href="{% url 'archive' %}">
                 <div class="sidenavEl">
                     <img src="{% static 'NavImg/archive.png'%}" alt="" srcset="">
                     <div class="sidenavElText">Архив</div>
                 </div>
             </a>
+            {% endif %}
+            
         </div>
         <div class="btnSidenav">
             <a class="btn" onclick="menuOpen()">
-                MENU
+                МЕНЮ
             </a>
         </div>
     </div>
