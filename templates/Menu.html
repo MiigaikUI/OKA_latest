@@ -101,15 +101,15 @@
                 </div>
             </a>
             {% endif %}
-            {% if pages.team %}
+
             <a href="{% url 'team' %}">
                 <div class="sidenavEl">
                     <img src="{% static 'NavImg/team.png'%}" alt="" srcset="">
                     <div class="sidenavElText">Команда</div>
                 </div>
             </a>
-            {% endif %}
-            
+
+
             {% if pages.region %}
             <a href="{% url 'region' %}">
                 <div class="sidenavEl">
@@ -118,7 +118,7 @@
                 </div>
             </a>
             {% endif %}
-            
+
             {% if pages.results %}
             <a href="{% url 'results' %}">
                 <div class="sidenavEl">
@@ -127,34 +127,30 @@
                 </div>
             </a>
             {% endif %}
-            
-            {% if pages.update %}
+
             <a href="{% url 'update' %}">
                 <div class="sidenavEl">
                     <img src="{% static 'NavImg/anons.png'%}" alt="" srcset="">
                     <div class="sidenavElText">Обновления</div>
                 </div>
             </a>
-            {% endif %}
 
-            {% if pages.event %}
-             <a href="{% url 'event' %}">
+            <a href="{% url 'event' %}">
                 <div class="sidenavEl">
                     <img src="{% static 'NavImg/event.png'%}" alt="" srcset="">
                     <div class="sidenavElText">Мероприятия</div>
                 </div>
             </a>
-            {% endif %}
 
             {% if pages.archive %}
-             <a href="{% url 'archive' %}">
+            <a href="{% url 'archive' %}">
                 <div class="sidenavEl">
                     <img src="{% static 'NavImg/archive.png'%}" alt="" srcset="">
                     <div class="sidenavElText">Архив</div>
                 </div>
             </a>
             {% endif %}
-            
+
         </div>
         <div class="btnSidenav">
             <a class="btn" onclick="menuOpen()">
