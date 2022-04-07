@@ -8,5 +8,5 @@ class UniqueBooleanField(BooleanField):
             objects.update(**{self.attname: False})
         elif not objects.exclude(id=model_instance.id) \
                 .filter(**{self.attname: True}):
-            return True
+            return add
         return getattr(model_instance, self.attname)

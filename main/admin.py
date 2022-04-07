@@ -11,7 +11,10 @@ class ImageAdmin(admin.ModelAdmin):
     readonly_fields = ('preview', 'link')
 
     def preview(self, obj):
-        return mark_safe(f'<img src="{obj.img.url}" style="height: 180px; width: 180px;">')
+        if obj.img:
+            return mark_safe(f'<img src="{obj.img.url}" style="height: 180px; width: 180px;">')
+        else:
+            return mark_safe("<p>None</p>")
 
     preview.short_description = 'Предпросмотр'
     preview.allow_tags = True
@@ -34,7 +37,11 @@ class TeamAdmin(admin.ModelAdmin):
     )
 
     def preview(self, obj):
-        return mark_safe(f'<img src="{obj.img.url}" style="height: 180px; width: 180px;">')
+        if obj.img:
+            return mark_safe(f'<img src="{obj.img.url}" style="height: 180px; width: 180px;">')
+        else:
+            return mark_safe("<p>None</p>")
+
 
     preview.short_description = 'Предпросмотр'
     preview.allow_tags = True
@@ -78,7 +85,11 @@ class EventAdmin(admin.ModelAdmin):
     )
 
     def preview(self, obj):
-        return mark_safe(f'<img src="{obj.img.url}" style="height: 180px; width: 180px;">')
+        if obj.img:
+            return mark_safe(f'<img src="{obj.img.url}" style="height: 180px; width: 180px;">')
+        else:
+            return mark_safe("<p>None</p>")
+
 
     preview.short_description = 'Предпросмотр'
     preview.allow_tags = True
